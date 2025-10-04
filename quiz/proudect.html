@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giftify – Products</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<style>
+  /* Reset & Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #ff4d6d;
+  color: white;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #ffe0e9;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background: url('./image/image\ copy.png ' ) no-repeat center/cover;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.hero .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+/* Layout */
+.content-wrapper {
+  display: flex;
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Products Grid */
+.products {
+  flex: 3;
+}
+
+.products h2 {
+  margin-bottom: 20px;
+  color: #ff4d6d;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card img {
+  width: 100%;
+  max-height: 180px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  font-size: 1.1rem;
+  margin: 10px 0;
+}
+
+.product-card p {
+  font-weight: bold;
+  color: #ff4d6d;
+  margin-bottom: 10px;
+}
+
+.product-card button {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.product-card button:hover {
+  background: #e03c5a;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Sidebar */
+.sidebar {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.sidebar h2 {
+  margin-bottom: 15px;
+  color: #ff4d6d;
+}
+
+.offer-card {
+  background: #ffe0e9;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.festival-banner {
+  background: #ff4d6d;
+  color: white;
+  padding: 12px;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Footer */
+footer {
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer p {
+  margin-bottom: 10px;
+}
+
+footer .footer-links a {
+  color: #ff4d6d;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+footer .footer-links a:hover {
+  text-decoration: underline;
+}
+
+footer .contact {
+  margin: 10px 0;
+}
+
+footer .newsletter {
+  margin: 15px 0;
+}
+
+footer .newsletter input {
+  padding: 8px;
+  border: none;
+  border-radius: 6px;
+  width: 200px;
+  margin-right: 8px;
+}
+
+footer .newsletter button {
+  background: #ff4d6d;
+  border: none;
+  color: white;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+footer .social a {
+  color: #ff4d6d;
+  margin: 0 8px;
+  text-decoration: none;
+}
+
+footer .social a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+  }
+  
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+  </style>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Giftify – Products</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./product.html">Products</a></li>
+        <li><a href="./offer.html">Offers</a></li>
+        <li><a href="./cart.html">Cart</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" aria-label="Products Hero">
+    <div class="overlay"></div>
+    <div class="hero-text">
+      <h2>Explore Our Collection</h2>
+      <p>Gifts for every occasion, beautifully packed for your loved ones</p>
+    </div>
+  </section>
+
+  <main>
+    <div class="content-wrapper">
+      <!-- Product Categories -->
+      <section class="products">
+        <h2>All Products</h2>
+        <div class="product-grid">
+          <!-- Product 1 -->
+          <article class="product-card">
+            <img src="./image/image1.png" alt="Birthday Gift Box">
+            <h3>Birthday Surprise</h3>
+            <p>$25</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 2 -->
+          <article class="product-card">
+            <img src="./image/image2.png" alt="Anniversary Gift Set">
+            <h3>Anniversary Special</h3>
+            <p>$40</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 3 -->
+          <article class="product-card">
+            <img src="./image/image3.png" alt="Festive Hamper Basket">
+            <h3>Festive Hamper</h3>
+            <p>$55</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 4 -->
+          <article class="product-card">
+            <img src="./image/image4.png" alt="Luxury Gift Box">
+            <h3>Luxury Box</h3>
+            <p>$70</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 5 -->
+          <article class="product-card">
+            <img src="./image/image 5.png" alt="Chocolate Gift Box">
+            <h3>Chocolate Delight</h3>
+            <p>$30</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 6 -->
+          <article class="product-card">
+            <img src="./image/image 6.png" alt="Flower Bouquet">
+            <h3>Rose Bouquet</h3>
+            <p>$20</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 7 -->
+          <article class="product-card">
+            <img src="./image/image 7.png" alt="Custom Printed Mug">
+            <h3>Personalized Mug</h3>
+            <p>$15</p>
+            <button>Add to Cart</button>
+          </article>
+          <!-- Product 8 -->
+          <article class="product-card">
+            <img src="./image/image 8.png" alt="Teddy Bear Gift">
+            <h3>Soft Teddy Bear</h3>
+            <p>$18</p>
+            <button>Add to Cart</button>
+          </article>
+        </div>
+      </section>
+
+      <!-- Sidebar (Filters / Offers) -->
+      <aside class="sidebar">
+        <h2>Filter by</h2>
+        <div class="offer-card">Price: Under $30</div>
+        <div class="offer-card">Category: Birthday</div>
+        <div class="offer-card">Category: Anniversary</div>
+        <div class="offer-card">Category: Personalized</div>
+        <div class="festival-banner">🎁 Special Combo Deals 🎁</div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Giftify – All Rights Reserved</p>
+    <nav class="footer-links">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms & Conditions</a>
+    </nav>
+    <div class="contact" id="contact">
+      <p>Email: support@giftify.com | Phone: ‪+91-9876543210‬</p>
+    </div>
+    <form class="newsletter">
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="social">
+      <a href="#">Facebook</a> | 
+      <a href="#">Instagram</a> | 
+      <a href="#">Twitter</a>
+    </div>
+  </footer>
+</body>
+</html>
