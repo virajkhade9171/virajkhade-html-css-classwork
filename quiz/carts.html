@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giftify – Cart</title>
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🛒 Your Shopping Cart</h1>
+    <nav>
+      <ul>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./product.html">Products</a></li>
+        <li><a href="./offer.html">Offers</a></li>
+        <li><a href="./cart.html" class="active">Cart</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Cart Section -->
+  <main>
+    <section class="cart-section">
+      <h2>Your Items</h2>
+      <table class="cart-table">
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Birthday Surprise</td>
+            <td>$25</td>
+            <td><input type="number" value="1" min="1"></td>
+            <td>$25</td>
+            <td><button class="remove-btn">❌</button></td>
+          </tr>
+          <tr>
+            <td>Luxury Box</td>
+            <td>$70</td>
+            <td><input type="number" value="2" min="1"></td>
+            <td>$140</td>
+            <td><button class="remove-btn">❌</button></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Cart Summary -->
+      <div class="cart-summary">
+        <h3>Order Summary</h3>
+        <p>Subtotal: <strong>$165</strong></p>
+        <p>Shipping: <strong>Free</strong></p>
+        <p class="total">Grand Total: <strong>$165</strong></p>
+        <button class="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Giftify – All Rights Reserved</p>
+    <nav class="footer-links">
+      <a href="#">Privacy Policy</a> | 
+      <a href="#">Terms & Conditions</a>
+    </nav>
+    <div class="contact" id="contact">
+      <p>Email: support@giftify.com | Phone: ‪+91-9876543210‬</p>
+    </div>
+  </footer>
+</body>
+</html>
